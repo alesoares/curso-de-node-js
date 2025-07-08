@@ -1,13 +1,23 @@
 
-var mysql = require('mysql');
+import { createConnection } from 'mysql';
 
-module.exports = function () {
-    
-    return connection = mysql.createConnection({
-        host: 'seu servidor',
-        user: 'seu usuário',
-        password: 'sua senha',
-        database: 'seu banco de dados',
+var connMySQL = function() {
+     
+    return connection = createConnection({
+        host: 'localhost',
+        user: 'root',
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        password: '', // DEVE SER OMITIDA ANTES DE SUBIR O REPOSITÓRIO PARA O GITHUB; NÃO ESQUECER
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        database: 'portal_noticias',
         insecureAuth: true
-    })
+    });
+};
+
+export default function () {
+    
+    return connMySQL;
+
 };
